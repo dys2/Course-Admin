@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
+// import { Query } from "react-apollo";
+// import gql from "graphql-tag";
 
 
 
@@ -14,20 +14,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Query
-          asyncMode
-          query={gql`
-            {
-              me {
-                email
-              }
-            }
-          `}
-        >
-        {({data}) => {
-          return <AdminPage />;
-        }}
-        </Query>
+        <Authorize>
+          <AdminPage />
+        </Authorize>
       </div>
     );
   }

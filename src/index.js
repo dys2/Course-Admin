@@ -18,8 +18,10 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
-      <Suspense fallback={<div>loading</div>}>
+      <Suspense fallback="loading">
+        <UserProvider>
           <App />
+        </UserProvider>
       </Suspense>
     </Router>
   </ApolloProvider>,
