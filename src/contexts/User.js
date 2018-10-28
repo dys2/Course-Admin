@@ -31,7 +31,7 @@ function UserProvider({ children }) {
       const token = localStorage.getItem('token');
       const promise = axios.get(`${process.env.REACT_APP_ENDPOINT}/check_auth`, { headers: { authorization: token } })
         .then(res => {
-          throw dispatch({type: "authorize", payload: res.data.user});
+          dispatch({type: "authorize", payload: res.data.user});
         });
       userInit = true;
       throw promise;
