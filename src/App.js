@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
+
+
+
+
+import AdminPage from './AdminPage';
+import Authorize from './Authorize';
 import './App.css';
 
+require('loaders.css');
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Query
+          asyncMode
+          query={gql`
+            {
+              me {
+                email
+              }
+            }
+          `}
+        >
+        {({data}) => {
+          return <AdminPage />;
+        }}
+        </Query>
       </div>
     );
   }

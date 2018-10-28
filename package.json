@@ -3,8 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "apollo-boost": "^0.1.18",
+    "axios": "^0.18.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "graphql": "latest",
+    "loaders.css": "^0.1.2",
+    "react": "^16.7.0-alpha",
+    "react-apollo": "^3.0.0-alpha.0",
+    "react-dom": "^16.7.0-alpha",
+    "react-loaders": "^3.0.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5"
   },
   "scripts": {
